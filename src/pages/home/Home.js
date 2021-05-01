@@ -81,14 +81,14 @@ function Home({classes,user,setUser}) {
 
   const history = useHistory()
 
-  if(isLoading){
-    return (
-      <Container   maxWidth="xlg"  className={classes.mainContainer}>
+  // if(isLoading){
+  //   return (
+  //     <Container   maxWidth="xlg"  className={classes.mainContainer}>
 
-      <CircularProgress  className={classes.loader}/>
-      </Container>
-    )
-  }
+  //     <CircularProgress  className={classes.loader}/>
+  //     </Container>
+  //   )
+  // }
 
     return (
       <>
