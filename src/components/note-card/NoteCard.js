@@ -62,7 +62,7 @@ function NoteCard({note}) {
   const history = useHistory()
     const classes = useStyles();
  
-
+    const URL = process.env.REACT_APP_URL
 
     const bookmarkNote = (e)=>{
       e.stopPropagation()
@@ -78,7 +78,10 @@ function NoteCard({note}) {
     const gotoNote = ()=>{
       history.push(`/view-note/${note.id}`)
     }
-    
+    const copyURL = ()=>{
+      
+      toast('Note URL copied.',{type:'success'})
+    }
     return (
         <Card className={classes.root} onClick={gotoNote}>
         <CardHeader
@@ -115,7 +118,7 @@ function NoteCard({note}) {
           }
              <IconButton aria-label="share" onClick={(e)=> e.stopPropagation()}>
                 <CopyToClipboard text={`${URL}view-note/${note.id}`}
-                                                onCopy={()=>{toast('Note URL copied.',{type:'success'})}}
+                                                onCopy={copyURL}
                                             >
                                                 <ShareIcon className={classes.share} titleAccess='share' />
                                             </CopyToClipboard>

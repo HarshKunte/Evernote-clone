@@ -26,14 +26,14 @@ function CardUi({classes, notes, bookmarkedOnly}) {
         >
             {
               ( bookmarkedOnly? ( notes?.filter((note)=> note.bookmarked===true)): (notes))?.map((note,index)=>(
-                <Slide 
+                <Slide  key={note.id}
                 direction="down"
                 timeout={{ appear: (index+1), enter: (index+1)*(notes.length>2? 150: 500), exit: (index+1)*200 }}
                 in={true}
                 mountOnEnter
                 unmountOnExit
               >
-                    <Grid key={note.id} item xs={12} sm={6} md={4} className={classes.gridItem}>
+                    <Grid item xs={12} sm={6} md={4} className={classes.gridItem}>
                       <NoteCard note={note}/>
 
                     </Grid>

@@ -83,7 +83,7 @@ function Home({classes,user,setUser}) {
 
   if(user && isLoading){
     return (
-      <Container   maxWidth="xlg"  className={classes.mainContainer}>
+      <Container   maxWidth="xl"  className={classes.mainContainer}>
 
       <CircularProgress  className={classes.loader}/>
       </Container>
@@ -94,13 +94,13 @@ function Home({classes,user,setUser}) {
       <>
       {
         !user? (
-          <Container   maxWidth="xlg"  className={classes.mainContainer}>
+          <Container   maxWidth="xl"  className={classes.mainContainer}>
             <div className={classes.loginContainer}>
 
             <Typography variant="h4" color='textSecondary' style={{fontWeight:'bold'}} gutterBottom className={classes.welcomeTitle}>
        Welcome to Notey.
       </Typography>
-            <Typography variant="p" color='textSecondary' style={{fontWeight:'bold'}} gutterBottom>
+            <Typography variant="h5" color='textSecondary' style={{fontWeight:'bold'}} gutterBottom>
        Create and share notes with ease. Sign In to get started.
       </Typography>
            
