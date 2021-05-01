@@ -114,7 +114,7 @@ function NoteCard({note}) {
             )
           }
              <IconButton aria-label="share" onClick={(e)=> e.stopPropagation()}>
-                <CopyToClipboard text={`${URL}/view-note/${note.id}`}
+                <CopyToClipboard text={`${URL}view-note/${note.id}`}
                                                 onCopy={()=>{toast('Note URL copied.',{type:'success'})}}
                                             >
                                                 <ShareIcon className={classes.share} titleAccess='share' />
