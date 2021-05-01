@@ -25,7 +25,7 @@ export default function debounce(fn, d){
   
   export function removeHeaderTags (str) {
     // return str.replace(/<[^>]*>?/gm, '');
-    return str.replaceAll(/<h[12345]?>/gm,'<p>').replaceAll(/<\/h[12345]?>/gm,'</p>');
+    return str.replaceAll(/<h[12345]?>/gm,'<p>').replace(/<\/h[12345]?>/gm,'</p>');
   };
   export function removeHTMLTags (str) {
     return str.replace(/<[^>]*>?/gm, '');
