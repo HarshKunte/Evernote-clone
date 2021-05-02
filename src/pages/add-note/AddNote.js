@@ -41,6 +41,7 @@ function AddNote({classes, note, user}) {
         if(!title) setError(true)
         console.log(title);
         console.log(body);
+        if(title){
         db.collection('notes').add({
             owner:user,
             title:title,
@@ -55,6 +56,7 @@ function AddNote({classes, note, user}) {
             toast('😟Some error occurred!',{type:'error'})
             console.log(e);
         })
+        }
         }
        
     }
