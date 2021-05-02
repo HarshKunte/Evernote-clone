@@ -4,6 +4,12 @@ const styles = theme =>({
         height:'8vh',
         padding:'0 4%'
       },
+      darkModeRoot:{
+        flexGrow: 1,
+        height:'8vh',
+        padding:'0 4%',
+        background: theme.black,
+      },
       menuButton: {
         marginRight: theme.spacing(2),
       },
@@ -16,6 +22,13 @@ const styles = theme =>({
           background: 'white',
           boxShadow:'none',
         color:theme.orange,
+
+          // color:'#e79b3d'
+      },
+      appBarDark:{
+          background: theme.black,
+          boxShadow:'none',
+          color:theme.orange,
 
           // color:'#e79b3d'
       },

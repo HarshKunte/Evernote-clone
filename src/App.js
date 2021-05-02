@@ -34,6 +34,7 @@ const theme = createMuiTheme({
   lightGrey: '#b9b9b9',
   mediumGrey:'#595a59',
   darkGrey:'#3d3d3d',
+  black:'#0d0d0b',
   lightBg:'#f5f4f4',
 
   // lightBg:'#fafafa'  
@@ -41,10 +42,9 @@ const theme = createMuiTheme({
 
 
 function App() {
-  const [selectedNoteIndex, setSelectedNoteIndex] = useState(null)
-  const [selectedNote, setSelectedNote] = useState(null)
+ 
   const [user, setUser] = useState(null)
-  const [isTyping, setIsTyping] = useState(false)
+  const [darkMode, setDarkMode]= useState(false)
 
 
   useEffect(() => {
@@ -67,15 +67,15 @@ function App() {
 
       <CssBaseline />
       <Router>
-        <Navbar/>
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
         <Switch>
             <Route path='/' exact >
-                <Home user={user} setUser={setUser} />
+                <Home user={user} setUser={setUser} darkMode={darkMode} setDarkMode={setDarkMode} />
               </Route>
-            <Route path='/add-note' exact  >
+            <Route path='/add-note' exact darkMode={darkMode} setDarkMode={setDarkMode} >
               <AddNote user={user}/>
             </Route>
-            <Route path='/view-note/:id' exact >
+            <Route path='/view-note/:id' exact darkMode={darkMode} setDarkMode={setDarkMode} >
               <ViewNote user={user}/>
             </Route>
            

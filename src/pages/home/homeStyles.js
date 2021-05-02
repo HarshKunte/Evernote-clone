@@ -1,9 +1,12 @@
 const styles = theme => ({
-    root:{
+    main:{
         backgroundColor:theme.lightBg,
         minHeight:'84vh'
     },
-    
+    mainDark:{
+        background:theme.black,
+        minHeight:'84vh'
+    },
     button:{
         margin: theme.spacing(1),
         color: 'white',
@@ -22,6 +25,15 @@ const styles = theme => ({
     mainContainer:{
         minHeight:'92vh', padding:'1rem 1.5rem',display:'flex',justifyContent:'center',alignItems:'center', flexDirection:'column'
     },
+    mainContainerDark:{
+        minHeight:'92vh',
+         padding:'1rem 1.5rem',
+         display:'flex',
+         justifyContent:'center',
+         alignItems:'center', 
+         flexDirection:'column',
+         color:'white'
+    },
     addNoteContainer:{
         display: 'flex',
         flexDirection:'column',
@@ -35,6 +47,7 @@ const styles = theme => ({
         [theme.breakpoints.down('sm')]: {
             width:'100%'
           },
+          
     },
     welcomeDiv:{
         marginTop:'5rem',
@@ -55,6 +68,13 @@ const styles = theme => ({
             fontSize: '1.4rem',
           },
     },
+    welcomeTitleDark:{
+        color:'white',
+        [theme.breakpoints.down('sm')]: {
+           
+            fontSize: '1.4rem',
+          },
+    },
     listTop:{
         display:'flex',
         padding:'0.5rem 1rem',
@@ -64,7 +84,9 @@ const styles = theme => ({
     noteCount:{
         flexGrow:1
     },
-
+    tagLineDark:{
+        color:theme.lightGrey
+    },
     noDataDiv:{
         display:'flex',
         flexDirection:'column',
@@ -78,6 +100,7 @@ const styles = theme => ({
         width:'100%',
         height:'10rem'
     }
+
    
 })
 

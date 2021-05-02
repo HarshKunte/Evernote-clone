@@ -45,7 +45,9 @@ function ListUi({notes, bookmarkedOnly}) {
     const classes = useStyles();
 
     const bookmarkNote = (e,note)=>{
-      e.stopPropogation()
+      console.log(e);
+      e.preventDefault()
+      e.stopPropagation()
       const currBookMarkStatus = note.bookmarked? note.bookmarked : false
       console.log(currBookMarkStatus);
       db.collection('notes').doc(note.id).update({
@@ -139,12 +141,12 @@ function ListUi({notes, bookmarkedOnly}) {
                           {
                       note.bookmarked? (
 
-                    <IconButton aria-label="add to favorites" onClick={()=>bookmarkNote(note)}>
+                    <IconButton aria-label="add to favorites" onClick={(e)=>bookmarkNote(e,note)}>
                       <BookmarkIcon className={classes.bookMark} />
                     </IconButton>
                       ) :
                       (
-                        <IconButton aria-label="add to favorites" onClick={()=>bookmarkNote(note)}>
+                        <IconButton aria-label="add to favorites" onClick={(e)=>bookmarkNote(e,note)}>
                       <BookmarkBorderIcon className={classes.bookMark} />
                     </IconButton>
                       )
