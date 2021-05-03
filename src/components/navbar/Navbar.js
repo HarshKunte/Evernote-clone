@@ -10,7 +10,7 @@ import styles from './navbarStyles';
 import { toast } from 'react-toastify';
 import { useHistory } from 'react-router';
 
-function Navbar({classes ,darkMode,setDarkMode}) {
+function Navbar({classes }) {
   const history = useHistory()
   const user = firebase.auth().currentUser
 
@@ -26,9 +26,9 @@ function Navbar({classes ,darkMode,setDarkMode}) {
   }
  
   return (
-    <div className={ darkMode ? classes.darkModeRoot : classes.root }>
+    <div className={classes.root }>
      
-      <AppBar className={ darkMode ? classes.appBarDark : classes.appBarLight} position="static">
+      <AppBar className={ classes.appBarLight} position="static">
         <Toolbar>
       
           <Typography variant="h6" className={classes.title}>

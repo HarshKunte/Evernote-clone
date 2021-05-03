@@ -44,7 +44,7 @@ const theme = createMuiTheme({
 function App() {
  
   const [user, setUser] = useState(null)
-  const [darkMode, setDarkMode]= useState(false)
+  
 
 
   useEffect(() => {
@@ -67,15 +67,15 @@ function App() {
 
       <CssBaseline />
       <Router>
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Navbar/>
         <Switch>
             <Route path='/' exact >
-                <Home user={user} setUser={setUser} darkMode={darkMode} setDarkMode={setDarkMode} />
+                <Home user={user} setUser={setUser}  />
               </Route>
-            <Route path='/add-note' exact darkMode={darkMode} setDarkMode={setDarkMode} >
+            <Route path='/add-note' exact  >
               <AddNote user={user}/>
             </Route>
-            <Route path='/view-note/:id' exact darkMode={darkMode} setDarkMode={setDarkMode} >
+            <Route path='/view-note/:id' exact  >
               <ViewNote user={user}/>
             </Route>
            

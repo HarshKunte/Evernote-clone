@@ -22,7 +22,7 @@ import empty from '../../images/empty.svg'
 import { db } from '../../config';
 import firebase from 'firebase/app'
 import 'firebase/auth'
-function Home({classes,user,setUser, darkMode}) {
+function Home({classes,user,setUser}) {
   let provider = new firebase.auth.GoogleAuthProvider();
 
   const [listView, setListView] = useState(false)
@@ -83,8 +83,8 @@ function Home({classes,user,setUser, darkMode}) {
 
   if(user && isLoading){
     return (
-      <div className={darkMode ? classes.rootDark : classes.root}>
-      <Container   maxWidth="xl"  className={darkMode ?classes.mainContainerDark : classes.mainContainer}>
+      <div className={classes.root}>
+      <Container   maxWidth="xl"  className={ classes.mainContainer}>
 
       <CircularProgress  className={classes.loader}/>
       </Container>
@@ -94,7 +94,7 @@ function Home({classes,user,setUser, darkMode}) {
   }
 
     return (
-      <div className={darkMode ? classes.mainDark : classes.main}>
+      <div className={ classes.main}>
       {
         !user? (
           <Container   maxWidth="xl"  className={classes.mainContainer}>
@@ -127,8 +127,8 @@ function Home({classes,user,setUser, darkMode}) {
      <Grid item xs={12} sm={4} md={4} className={classes.addNoteContainer} >
        <div className={classes.welcomeDiv}>
 
-         <p className={darkMode? classes.welcomeTitleDark : classes.welcomeTitle}>Welcome to Notey!!</p>
-         <Typography variant="body2" color="textSecondary" component="p" className={darkMode? classes.tagLineDark: ''}>
+         <p className={ classes.welcomeTitle}>Welcome to Notey!!</p>
+         <Typography variant="body2" color="textSecondary" component="p" className={classes.tagLineDark}>
         Create, bookmark and share your notes with anyone easily. 
        </Typography>
       
