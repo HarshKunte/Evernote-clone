@@ -1,5 +1,5 @@
 # Notey
-### Notes web app built using React and Firebase along with Google authentication.
+### Notes web app built using React, Material-UI and Firebase along with Google authentication.
 
 ## [Check live here](https://mynotey.netlify.app).
 
@@ -10,6 +10,7 @@
 - Share Notes
 - View only Note
 - Access notes anywhere using your Google account.
+- Mobile responsive
 
 ### Steps to install
 
